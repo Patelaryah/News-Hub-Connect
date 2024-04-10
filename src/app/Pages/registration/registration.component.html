@@ -1,0 +1,67 @@
+<div class="container">
+    <h1>Register As User</h1>
+    <div>
+        <form action="#">
+            <div class="form-group-radio">
+                <label>Select user type: </label>
+                <div style="margin-right: 30px;margin-left: 30px;">
+                    <input type="radio" value="User" name="user-type">
+                    <label>User</label>
+                </div>
+                <div>
+                    <input type="radio" value="Journalist" name="user-type">
+                    <label>Journalist</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username" name="username"  required>
+                <input type="text" id="city" name="city" placeholder="City" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email" name="email" required>
+                <input type="password" id="password" placeholder="Password" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="contact" placeholder="Contact" name="contact" required>
+                <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirm-password" required>
+            </div>
+            <div class="image-group">
+                <label>Choose an Avatar</label>
+            </div>
+            <br>
+            <div class="image-group">
+                <div id="image-list">
+                    <input type="radio" id="picture1" name="picture" value="picture1">
+                    <label for="picture1"><img src="images/1.jpeg" alt="Picture 1"></label>
+                    </div>
+                <div id="image-list">
+                    <input type="radio" id="picture2" name="picture" value="picture2">
+                    <label for="picture2"><img src="images/2.jpeg" alt="Picture 2"></label>
+                </div>
+                <div id="image-list">
+                    <input type="radio" id="picture3" name="picture" value="picture3">
+                    <label for="picture3"><img src="images/3.jpeg" alt="Picture 3"></label>
+                </div>
+                <div id="image-list">
+                    <input type="radio" id="picture4" name="picture" value="picture4">
+                    <label for="picture4"><img src="images/4.jpeg" alt="Picture 4"></label>
+                </div>
+                <div id="image-list">
+                    <input type="radio" id="picture5" name="picture" value="picture5">
+                    <label for="picture5"><img src="images/5.jpeg" alt="Picture 5"></label>
+                </div>
+                <div id="image-list">
+                    <input type="radio" id="picture6" name="picture" value="picture6">
+                    <label for="picture6"><img src="images/6.jpeg" alt="Picture 6"></label>
+                </div>
+            </div>
+            <div id="image-list" class="form-group">
+                <p id="selectedPicture">Selected Picture: </p>
+            </div>
+            
+            <div class="submit-group">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

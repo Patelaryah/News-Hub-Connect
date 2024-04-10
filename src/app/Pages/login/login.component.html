@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Login</h1>
+    <div>
+        <form action="#">
+<!--            <div class="form-group-radio">
+                <label>Select user type: </label>
+                <div style="margin-right: 30px;margin-left: 30px;">
+                    <input type="radio" value="User" name="user-type">
+                    <label>User</label>
+                </div>
+                <div>
+                    <input type="radio" value="Journalist" name="user-type">
+                    <label>Journalist</label>
+                </div>
+            </div> -->
+            <div class="form-group">
+                <input type="email" [(ngModel)]="loginObj.username" autocomplete="off" placeholder="Email" name="username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" [(ngModel)]="loginObj.password" autocomplete="off" placeholder="Password" name="password" required>
+            </div>
+            
+            <div class="submit-group">
+                <button type="submit" (click)="onLogin()">Login</button>              
+            </div>
+            <div>
+                <label>Existing User? <a href="#">Registration</a></label>
+            </div>
+        </form>
+    </div>
+</div>
