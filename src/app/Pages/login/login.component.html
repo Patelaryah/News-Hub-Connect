@@ -1,31 +1,34 @@
-<div class="container">
-    <h1>Login</h1>
-    <div>
-        <form action="#">
-<!--            <div class="form-group-radio">
-                <label>Select user type: </label>
-                <div style="margin-right: 30px;margin-left: 30px;">
-                    <input type="radio" value="User" name="user-type">
-                    <label>User</label>
-                </div>
-                <div>
-                    <input type="radio" value="Journalist" name="user-type">
-                    <label>Journalist</label>
-                </div>
-            </div> -->
-            <div class="form-group">
-                <input type="email" [(ngModel)]="loginObj.username" autocomplete="off" placeholder="Email" name="username" required>
+<!-- sign in form -->
+<a href="#" class="back-button">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABR0lEQVR4nO2WsU7DMBCGv4al6QuwsYQ3QYVK0L4IT8BEpwoQDKyFAhsDUAZ2diRQy4zUsbCzIkCRzhKKEvucOCpC/NK/OGd/ytk+H/xLpxawKo6pURHQA86BN+Ar43TsDOhKbBB1gOccWJGnwHoV4BKw5wHM+ljW8IaOK0CNb3xTfxgAaryvhXYCQo3bLmikOEgfwK0neOJKeU+xyLbE7nrCt2zgC8fkI4lryrXxAY9s4LziYDz+ka5hiX2e28pg0aQH+Z5qBbgE7oB74BF4AV6Bdwc8zgMnBcEzYBk/7RSslfwqcGtRqV7Y4UKetrqu0wkWdWssIJs2cKT4kzIl80nzSm2U2D+bP4E1lDoICB5ooaYRuA4AvSrTgzWAfsXWp1Lj15b31OcgqffUpUje05EUgiwsHTuVKxOsvc1TLHU3qbuh58/oGyxAnNsi+7eHAAAAAElFTkSuQmCC">
+  </a>
+  <div class="card">
+    <div class="container">
+        <div class="left-side">
+            <h1>Welcome back To<br>NEWS HUB CONNECT!</h1>
+            <p>Already have an account?</p>
+            <button class="signup-button" routerLink="/registration">Sign Up</button>
+        </div>
+        <div class="right-side">
+            <h2>Login</h2>
+            <div class="signup-form">
+                <div class="radiogroup">
+                    <h5>Please select your Role</h5>
+                    <div class="link" *ngFor="let role of roles">
+                      <input type="radio" [id]="role.id" name="icon" [value]="role.name" [(ngModel)]="selectedRole" />
+                      <label [for]="role.id"><i [class]="role.iconClass" class="label-icon"></i></label>
+                      <p>{{ role.name }}</p>
+                    </div>
+                  </div>                  
+                  <div class="input_contain">
+                    <div *ngFor="let field of inputFields">
+                      <input type="{{ field.type }}" placeholder="{{ field.placeholder }}" required>
+                    </div>
+                  </div>
+                  
+                <button class="login-button" (click)="togglePopup()">Login</button>
             </div>
-            <div class="form-group">
-                <input type="password" [(ngModel)]="loginObj.password" autocomplete="off" placeholder="Password" name="password" required>
-            </div>
-            
-            <div class="submit-group">
-                <button type="submit" (click)="onLogin()">Login</button>              
-            </div>
-            <div>
-                <label>Existing User? <a href="#">Registration</a></label>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+  </div>
+

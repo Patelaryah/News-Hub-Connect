@@ -1,0 +1,25 @@
+<div class="col" id="col1" [ngClass]="{'show': showInput, 'hide': !showInput}">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title1">Manage Users</h1>
+      </div>
+    </div>
+</div>
+ 
+<div>
+    <h3>Current Users</h3>
+    <div class="col" id="col2">
+        <div class="card">
+        <div class="card-body">
+            <div class="card-title2-container" *ngFor="let channel of channels">
+            <h5 class="card-title2">{{channel.name}}</h5>
+            <div class="buttons-container">
+                <button class="btn btn-primary" (click)="viewChannel(channel)">View</button>
+                <button class="btn btn-secondary" (click)="deleteChannel(channel)">Delete</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+  

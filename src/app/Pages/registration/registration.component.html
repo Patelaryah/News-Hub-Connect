@@ -1,67 +1,60 @@
-<div class="container">
-    <h1>Register As User</h1>
-    <div>
-        <form action="#">
-            <div class="form-group-radio">
-                <label>Select user type: </label>
-                <div style="margin-right: 30px;margin-left: 30px;">
-                    <input type="radio" value="User" name="user-type">
-                    <label>User</label>
+<!-- sign in form -->
+<a href="#" class="back-button">
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABR0lEQVR4nO2WsU7DMBCGv4al6QuwsYQ3QYVK0L4IT8BEpwoQDKyFAhsDUAZ2diRQy4zUsbCzIkCRzhKKEvucOCpC/NK/OGd/ytk+H/xLpxawKo6pURHQA86BN+Ar43TsDOhKbBB1gOccWJGnwHoV4BKw5wHM+ljW8IaOK0CNb3xTfxgAaryvhXYCQo3bLmikOEgfwK0neOJKeU+xyLbE7nrCt2zgC8fkI4lryrXxAY9s4LziYDz+ka5hiX2e28pg0aQH+Z5qBbgE7oB74BF4AV6Bdwc8zgMnBcEzYBk/7RSslfwqcGtRqV7Y4UKetrqu0wkWdWssIJs2cKT4kzIl80nzSm2U2D+bP4E1lDoICB5ooaYRuA4AvSrTgzWAfsXWp1Lj15b31OcgqffUpUje05EUgiwsHTuVKxOsvc1TLHU3qbuh58/oGyxAnNsi+7eHAAAAAElFTkSuQmCC">
+</a>
+<div class="card">
+  <div class="container">
+      <div class="left-side">
+          <h1>Welcome back To<br>NEWS HUB CONNECT!</h1>
+          <p>Already have an account?</p>
+          <button class="signup-button" routerLink="/login">Login Up</button>
+      </div>
+      <div class="right-side">
+          <h2>Login</h2>
+          <div class="signup-form">
+              <div class="radiogroup">
+                  <h5>Please select your Role</h5>
+                  <div class="link" *ngFor="let role of roles">
+                    <input type="radio" [id]="role.id" name="icon" [value]="role.name" [(ngModel)]="selectedRole" />
+                    <label [for]="role.id"><i [class]="role.iconClass" class="label-icon"></i></label>
+                    <p>{{ role.name }}</p>
+                  </div>
+                </div>                  
+                
+                <div *ngFor="let row of inputFields" class="row">
+                  <div *ngFor="let field of row" class="column">
+                    <input type="{{ field.type }}" placeholder="{{ field.placeholder }}">
+                  </div>
                 </div>
-                <div>
-                    <input type="radio" value="Journalist" name="user-type">
-                    <label>Journalist</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <input type="text" id="username" placeholder="Username" name="username"  required>
-                <input type="text" id="city" name="city" placeholder="City" required>
-            </div>
-            <div class="form-group">
-                <input type="email" id="email" placeholder="Email" name="email" required>
-                <input type="password" id="password" placeholder="Password" name="password" required>
-            </div>
-            <div class="form-group">
-                <input type="text" id="contact" placeholder="Contact" name="contact" required>
-                <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirm-password" required>
-            </div>
-            <div class="image-group">
-                <label>Choose an Avatar</label>
-            </div>
-            <br>
-            <div class="image-group">
-                <div id="image-list">
-                    <input type="radio" id="picture1" name="picture" value="picture1">
-                    <label for="picture1"><img src="images/1.jpeg" alt="Picture 1"></label>
-                    </div>
-                <div id="image-list">
-                    <input type="radio" id="picture2" name="picture" value="picture2">
-                    <label for="picture2"><img src="images/2.jpeg" alt="Picture 2"></label>
-                </div>
-                <div id="image-list">
-                    <input type="radio" id="picture3" name="picture" value="picture3">
-                    <label for="picture3"><img src="images/3.jpeg" alt="Picture 3"></label>
-                </div>
-                <div id="image-list">
-                    <input type="radio" id="picture4" name="picture" value="picture4">
-                    <label for="picture4"><img src="images/4.jpeg" alt="Picture 4"></label>
-                </div>
-                <div id="image-list">
-                    <input type="radio" id="picture5" name="picture" value="picture5">
-                    <label for="picture5"><img src="images/5.jpeg" alt="Picture 5"></label>
-                </div>
-                <div id="image-list">
-                    <input type="radio" id="picture6" name="picture" value="picture6">
-                    <label for="picture6"><img src="images/6.jpeg" alt="Picture 6"></label>
-                </div>
-            </div>
-            <div id="image-list" class="form-group">
-                <p id="selectedPicture">Selected Picture: </p>
-            </div>
-            
-            <div class="submit-group">
-                <button type="submit">Register</button>
-            </div>
-        </form>
-    </div>
+                
+              <a (click)="toggleImagePopup()"><h5 class="avatar">Choose an Avatar</h5></a>
+              <p *ngIf="selectedImage">{{getSelectedImageAlt()}}</p>
+              <button class="login-button" (click)="togglePopup()">Sign Up</button>
+          </div>
+      </div>
+  </div>
 </div>
+
+<!-- cards view -->
+<!-- cards view for otp -->
+<div class="popup" *ngIf="isPopupOpen">
+  <div class="otp">
+    <h1>OTP Verification</h1>
+    <p>Enter the code sent to your email or phone:</p>
+    <form id="otp-form">
+        <input *ngFor="let digit of digits; let i = index" type="text" id="otp{{i+1}}" maxlength="1" (input)="onInput($event, i)">
+        <button type="submit" (click)="verify()" style="border: none;">Verify</button>
+    </form>
+  </div>
+
+</div>
+  <!-- cards view images-->
+  <div class="popup" *ngIf="isImagePopupOpen">
+    <div class="popup-content">
+      <label *ngFor="let image of images">
+        <input type="radio" name="image" [value]="image.src" [(ngModel)]="selectedImage" />
+        <img [src]="image.src" [alt]="image.alt" />
+      </label>
+      <button (click)="submitImage()">Submit</button>
+    </div>
+  </div>

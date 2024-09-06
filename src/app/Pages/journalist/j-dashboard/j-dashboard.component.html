@@ -1,0 +1,100 @@
+<div class="dashboard">
+    <div class="stats">
+      <div class="stat-item">
+        <mat-icon style="height: 50px; width: 50px;">person_add</mat-icon>
+        <div>
+          <h2>15</h2>
+          <p>Followers gained Last week</p>
+        </div>
+      </div>
+      <div class="stat-item">
+        <mat-icon style="height: 50px; width: 50px;">people</mat-icon>
+        <div>
+          <h2>67</h2>
+          <p>Followers</p>
+        </div>
+      </div>
+      <div class="stat-item">
+        <mat-icon style="height: 50px; width: 50px;">article</mat-icon>
+        <div>
+          <h2>15</h2>
+          <p>Your Total Blogs</p>
+        </div>
+      </div>
+      <div class="stat-item">
+        <mat-icon style="height: 50px; width: 50px;">create</mat-icon>
+        <div>
+          <h2>3</h2>
+          <p>Blog posted Last week</p>
+        </div>
+      </div>
+      <div class="stat-item">
+        <mat-icon style="height: 50px; width: 50px;">visibility</mat-icon>
+        <div>
+          <h2>189</h2>
+          <p>Blog Views</p>
+        </div>
+      </div>
+    </div>
+    <div class="charts">
+      <div>
+        <h3>Followers Statistics</h3>
+        <div style="display: block;">
+          <canvas baseChart
+            [datasets]="barChartFollowersData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [type]="barChartType">  
+          </canvas>
+        </div>
+      </div>
+
+      <div>
+        <h3>Blogs Statistics</h3>
+        <div style="display: block;">
+          <canvas baseChart
+            [datasets]="barChartBlogsData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [type]="barChartType">  
+          </canvas>
+        </div>
+      </div>      
+    </div>
+    <div class="actions">
+      <p>blogs</p>
+      <div class="post-blog">
+        <h3>Post a New Blog</h3>
+        <button mat-raised-button color="primary">Post a New Blog</button>
+        <p>Effortlessly publish new blogs with streamlined tools, simplifying the process of sharing your latest content with your audience.</p>
+      </div>
+      
+      <div class="manage-blogs">
+        <div style="display: flex; justify-content: space-between;">
+          <h3>Post your saved drafts</h3>
+          <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25 7.19866V6.01004L23.4096 5.51897L23.2868 4.93862L24.4085 3.78348L23.8281 2.70089L22.2098 3.11942L21.808 2.70089L22.2266 1.12723L21.1607 0.479911L19.9721 1.65179L19.375 1.47321L18.9844 0H17.7232L17.3772 1.47321L16.702 1.65179L15.6027 0.479911L14.5201 1.09375L14.9721 2.63951L14.5201 3.10826L12.9297 2.68973L12.3158 3.75558L13.471 4.92746L13.3092 5.50781L11.7188 5.94308L11.702 7.15402L13.3092 7.57254L13.4431 8.24777L12.3214 9.35826L12.9018 10.3906L14.5536 9.9721L14.9554 10.452L14.5033 11.9531L15.6138 12.6004L16.6964 11.4621L17.3438 11.6239L17.7176 13.2143L18.9788 13.231L19.3527 11.6239L20 11.4286L21.1551 12.6339L22.2935 11.9587L21.8025 10.3962L22.2377 9.9442L23.8449 10.4353L24.4196 9.31362L23.2533 8.26451L23.3761 7.58929L25 7.19866ZM18.3482 9.72098C16.6016 9.72098 15.1786 8.30357 15.1786 6.55134C15.1786 4.79911 16.596 3.3817 18.3482 3.3817C20.1004 3.3817 21.5179 4.79911 21.5179 6.55134C21.5179 8.30915 20.1004 9.72098 18.3482 9.72098ZM22.3828 10.6362L25 11.4453V13.6719L21.9252 14.4196L21.6964 15.6864L23.8672 17.6562L22.7958 19.7712L19.7824 18.8393L18.9676 19.6875L19.8996 22.6172L17.7623 23.8839L15.5915 21.6239L14.3806 21.9922L13.6775 25.0056L11.3114 24.9777L10.6083 21.9866L9.39732 21.6741L7.36607 23.817L5.27902 22.606L6.12723 19.7879L5.36272 18.8895L2.26562 19.6763L1.16629 17.7344L3.28125 15.6473L3.01339 14.375L0 13.5882L0.0279018 11.3058L3.01339 10.4855L3.33147 9.38616L1.16071 7.1875L2.31585 5.18973L5.30692 5.97656L6.15513 5.10045L5.30692 2.19866L7.33817 1.04353L9.39174 3.24219L10.6585 2.90179L11.3058 0H13.6719L14.3192 2.56138L13.058 2.23214L12.7065 2.13728L12.5223 2.45536L11.9085 3.52121L11.7243 3.83371L11.981 4.0904L12.9408 5.06138L12.9241 5.11719L11.596 5.47991L11.25 5.57478L11.2444 5.93192L11.2333 6.65179C8.58259 7.23214 6.58482 9.59821 6.58482 12.4275C6.58482 15.6808 9.22433 18.3259 12.4833 18.3259C15.3013 18.3259 17.6562 16.3504 18.2422 13.7054L18.9788 13.7165L19.3638 13.7221L19.4531 13.3482L19.7656 12.0089L19.8717 11.9754L20.8259 12.9688L21.0882 13.2422L21.4118 13.0525L22.5502 12.3772L22.8739 12.1819L22.7623 11.8192L22.3828 10.6362Z" fill="#FFA500"/>
+          </svg>            
+        </div>  
+        <div style="display: flex; justify-content: left;">
+          <h2>{{ draft_blogs }} <sub style="font-size: 15px;">Blogs in draft</sub></h2>
+          
+        </div>
+        
+      </div>
+      
+
+      <div class="manage-blogs">
+        <div style="display: flex; justify-content: space-between;">
+          <h3>Manage Blogs</h3>
+          <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24.9288 1.90869L21.1561 19.7004C20.8715 20.9561 20.1292 21.2687 19.0744 20.6771L13.3262 16.4412L10.5525 19.1089C10.2455 19.4158 9.98882 19.6725 9.39725 19.6725L9.81023 13.8182L20.4641 4.19125C20.9273 3.77827 20.3636 3.54946 19.7442 3.96244L6.57334 12.2556L0.903187 10.4809C-0.330182 10.0958 -0.352505 9.24751 1.15991 8.65594L23.3382 0.11165C24.3651 -0.273428 25.2636 0.340465 24.9288 1.90869Z" fill="#FFA500"/>
+          </svg>
+        </div>  
+        <p>Effortlessly organize and maintain your blogs for seamless content creation and publication.</p>
+      </div>
+      
+    </div>
+  </div>

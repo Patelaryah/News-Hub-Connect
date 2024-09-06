@@ -1,0 +1,30 @@
+.card1 .sub-card {
+    background-color: #fff;
+    border-radius: 8px;
+    
+  }
+
+  .card3 {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .card3-news {
+    display: flex;
+    width: 100%;
+  }
+
+  .sub-card {
+    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
+    padding: 20px;
+    margin: 10px;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  }
+
+  .sub-card-img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }

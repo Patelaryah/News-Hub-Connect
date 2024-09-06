@@ -1,0 +1,27 @@
+<!-- <div>
+    <h3>Blogs</h3>
+    <div class="card3">
+      <h4 style="margin: 10px 0px 10px 0px;">Featured Stories</h4>
+      <div class="card3-news">
+        <a [routerLink]="[blog.targetUrl]" class="sub-card" *ngFor="let blog of blogs">
+          <img [src]="blog.imageUrl" [alt]="blog.alt" class="sub-card-img">
+          <h5>{{ blog.title }}</h5>
+          <p>{{ blog.description }}</p>
+        </a>
+      </div>
+    </div>
+</div> -->
+
+<div style="width: 100%;">
+  <div class="card3" *ngFor="let categoryData of categorizedBlogs">
+    <h4 style="margin: 10px 0px 10px 0px;">{{ categoryData.category }}</h4>
+      <div class="card3-news">
+        <a [routerLink]="[blog.targetUrl]" class="sub-card" *ngFor="let blog of categoryData.blogs">
+          <img [src]="blog.imageUrl" [alt]="blog.alt" class="sub-card-img">
+          <h5>{{ blog.title }}</h5>
+          <p>{{ blog.description }}</p>
+        </a>
+      </div>
+    <a style="text-decoration: none; display: block; text-align: right; padding-right: 10px;">more -></a>
+  </div>
+</div>

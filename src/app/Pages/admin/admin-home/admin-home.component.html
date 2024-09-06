@@ -1,0 +1,123 @@
+<div class="dashboard">
+  <div class="column">
+
+    <div class="stat-card">
+      <mat-card>
+        <h2>{{ totalRegisteredUsers }}</h2>
+        <p>Total registered users</p>
+      </mat-card>
+    </div>
+
+    <div class="stat-card">
+      <mat-card>
+        <h2>{{ totalNewVisitors }}</h2>
+        <p>Total new visitors</p>
+      </mat-card>
+    </div>
+
+    <div class="stat-card">
+      <mat-card>
+        <h2>{{ totalJournalists }}</h2>
+        <p>Total Journalists</p>
+      </mat-card>
+    </div>
+
+    <div class="stat-card">
+      <mat-card>
+        <h2>{{ totalAdmins }}</h2>
+        <p>Admins</p>
+      </mat-card>
+    </div>
+
+  </div>
+
+
+  <div class="column">
+
+    <div class="stat-card">
+      <mat-card>
+        <h2>{{ totalCategories }}</h2>
+        <p>Categories</p>
+      </mat-card>
+    </div>
+
+    <div class="stat-card">
+      <mat-card>
+        <h2>{{ totalBlogViews }}</h2>
+        <p>Total blog views</p>
+      </mat-card>
+    </div>
+
+    <div class="stat-card">
+      <mat-card>
+        <h2>{{ totalChannels }}</h2>
+        <p>Channels</p>
+      </mat-card>
+    </div>
+    
+    <div class="stat-card">
+      <mat-card>
+        <h2>{{ totalTags }}</h2>
+        <p>Tags</p>
+      </mat-card>
+    </div>
+
+  </div>
+  <div class="column">
+
+    <div class="stat-card">
+      <mat-card id="m-v-j">
+        <div class="image-container">
+          <img alt="most viewed journalist" [src]="journalist_img" height="90px" width="80px">
+        </div>
+        <h2>{{ mostviewedjournalist }}</h2>
+        <p>Most viewed blogs of Journalist</p>
+      </mat-card>
+    </div>
+    <div class="stat-card">
+      <mat-card id="m-v-j">
+        <div class="image-container">
+          <img alt="most viewed news channel" [src]="channel_img" height="80px" width="100px">
+        </div>
+        <h2>{{mostviewednews}}</h2>
+        <p>Most viewed Channel</p>
+      </mat-card>
+    </div>
+    <div class="stat-card">
+      <mat-card id="m-v-j">
+        <h2>{{mostviewedcategory}}</h2>
+        <p>Most viewed Category</p>
+      </mat-card>
+    </div>
+    <div class="stat-card">
+      <mat-card id="m-v-j">
+        <h2>{{mostsearchedkeyword}}</h2>
+        <p>Most searched Keyword</p>
+      </mat-card>
+    </div>
+
+  </div>
+  <div class="column">
+
+    <div class="chart-card">
+      <canvas baseChart 
+              [datasets]="registeredUsersData"
+              [labels]="registeredUsersLabels"
+              [options]="chartOptions"
+              [legend]="true"
+              [type]="ChartType">
+      </canvas>
+    </div>
+    <div class="chart-card">
+      <canvas baseChart 
+              [datasets]="newVisitorsData"
+              [labels]="newVisitorsLabels"
+              [options]="chartOptions"
+              [legend]="true"
+              [type]="ChartType">
+      </canvas>
+    </div>
+
+  </div>
+  <div class="clearfix"></div>
+</div>

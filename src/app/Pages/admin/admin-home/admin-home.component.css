@@ -1,0 +1,41 @@
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat-card {
+  margin: 5px 0px 15px 10px;
+}
+
+.stat-card, .chart-card {
+  flex: 1 1 calc(33.333% - 20px);
+}
+
+mat-card {
+  padding: 15px;
+  display: flex; /* Use flexbox to center align items */
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+}
+
+.image-container {
+  text-align: center; /* Center align within the container */
+  border-radius: 3%;
+}
+
+#m-v-j {
+  padding: 5px;
+}
+
+.chart-card {
+  height: 300px;
+}
+
+.column {
+  width: 25%;
+  float: left;
+}
+.clearfix {
+  clear: both;
+}

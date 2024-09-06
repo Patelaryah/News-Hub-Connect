@@ -1,72 +1,184 @@
-body {
-    font-family: sans-serif;
+  .link {
+    display: inline-block; /* Added */
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 7px;
+}
+
+/* Styling for radio buttons */
+.link input[type="radio"] {
+    display: none; /* Hide the actual radio button */
+}
+
+.link label {
+    cursor: pointer;
+    height: 50px; /* Set height */
+    width: 50px; /* Set width */
+    background-color: #caf7e3;
+    border-radius: 10px; /* Make it round */
+    display: inline-flex; /* Align vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.link p {
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+
+.link label i {
+    font-size: 1.5em; /* Adjust icon size */
+    transition: all 0.3s linear;
+}
+
+/* Style for hover effect */
+.link input[type="radio"]:checked + label i {
+    transform: scale(1.5);
+}
+
+/* New styles for user and journalist icons */
+.user label:hover i,
+.journalist label:hover i {
+    color: #ffc107; /* Change the color as desired */
+}
+
+/* Reset default styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Container styles */
 .container {
-    width: 30%;
-    height: 80%;
-    margin: 50px auto;
-    margin-top: 10%;
-    border: 1px solid #ccc;
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-    margin-left: 10%;
-    margin-right: 10%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 100%; /* Adjusted to 100% of the parent's height */
 }
 
-.form-group-radio {
-    margin-bottom: 15px;
-    margin-left: 10%;
-    margin-right: 10%;
+/* Left side styles */
+.left-side {
+    flex: 30%; /* 30% width */
+    background: #F8A11E;
+    padding: 20px;
     display: flex;
-}
-
-
-.submit-group {
-    margin-bottom: 15px;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative; /* Added position relative for positioning the back button */
 }
 
-input[type="email"],
-input[type="password"] {
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
+/* Right side styles */
+.right-side {
+    flex: 70%; /* 70% width */
+    background-color: white;
+    padding: 20px;
 }
 
-button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
+/* Text styles */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Button styles */
+.login-button{
+    display: block;
+    background-color: #f8A11E; /* Left side button color */
+    color: #FFFFFF; /* Left side text color */
+    margin-left: 205px;
+}
+.signup-button{
+    background-color: #FFFFFF; /* Left side button color */
+    color: #F8A11E; /* Left side text color */
+}
+.signup-button, .login-button {
     padding: 10px 20px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    margin-right: 30px;
+    font-size: 14px;
+    width: 100px;
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
-button[type="submit"]:hover {
-    background-color: #3e8e41;
+.signup-button:hover, .login-button:hover{
+    background-color: black;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    padding-right: 50px;
+    margin: 0px 5px 15px 0px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.card {
+    height: 100vh;
+    padding: 100px;
+    background: #F5E7D1;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Back button styles */
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Signup form styles */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 0px 80px 0px 80px;
+}
+
+.signup-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+.right-side h2 {
+    margin-left: 400px;
+    color: #F8A11E;
+}
+.signup-form h5 {
+    border: none;
+    color: #F8A11E;
+    margin-top: 10px;
+    padding: 0 auto;
+    margin: 0 auto;
+    
+}
+
+.row {
+    display: flex;
+    justify-content: space-between; /* Adjust spacing between columns */
+  }
+  
+  .column {
+    width: 48%; /* Adjust width of columns */
+  }
+
+.input_contain {
+  margin-top: 30px;
 }

@@ -1,0 +1,74 @@
+div {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar, .navbar1 {
+  width: 100%;
+  height: 45px;
+  padding: 10px 0;
+}
+
+.navbar1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: white;
+  color: black;
+  height: 90px;
+}
+
+.social {
+  display: flex;
+}
+
+.navbar {
+  margin: 0;
+  padding: 0;
+  background-color: #fca510;
+  justify-content: space-between;
+}
+
+.navbar a {
+  display: inline-block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: black;
+  color: white;
+}
+
+.container {
+  display: block;
+}
+
+/* 
+.container {
+  align-content: stretch;
+} */
+
+.social a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  margin-left: 20px; /* Adjust spacing between icons */
+}
+
+.social button {
+  margin-left: 20px;
+  background-color: blue;
+  color: white;
+  width: 80px;
+  border-radius: 5px;
+}
+
+#img1 {
+  height: 90px;
+  background-size: cover;
+}
+

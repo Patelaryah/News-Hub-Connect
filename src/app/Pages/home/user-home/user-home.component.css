@@ -1,0 +1,120 @@
+.card1 {
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  div {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .card1, .card3, .sub-card {
+    background-color: #fff;
+    border-radius: 8px;
+    
+  }
+
+  .card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .card-name-1 {
+    flex: 1;
+    margin-left: 10px;
+  }
+
+  .remove-button {
+    background-color: #f2f2f2;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .load-more {
+    display: block;
+    text-align: center;
+    color: orange;
+    text-decoration: none;
+  }
+
+  .imgs {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .imgs-container {
+    display: flex;
+    align-items: center;
+}
+
+    .right-side {
+        flex: 75%; /* 70% width */
+        padding: 20px;
+    }
+    .container {
+            display: flex;
+            background-color: #e0e0e0;
+            height: 100vh; /* 100% viewport height */
+    }
+    
+    .card2 {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 5px;
+        height: 120px;
+        width: 120px;
+        align-content: center;
+        overflow: hidden; /* Ensure the image does not overflow the card */
+    }
+
+    .card-img-2 {
+      width: 100%; /* Ensure the image fills the container */
+      object-fit: cover; /* Ensure the image fills the container while maintaining aspect ratio */
+    }
+
+    .card-name-2 {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .news-row {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+
+    .card3 {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+
+    .card3-news {
+      display: flex;
+      width: 100%;
+    }
+    .sub-card {
+      display: block;
+      box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
+      padding: 20px;
+      margin: 10px;
+      text-decoration: none; /* Remove underline */
+      color: inherit; /* Inherit color from parent */
+    }
+
+    .sub-card-img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }

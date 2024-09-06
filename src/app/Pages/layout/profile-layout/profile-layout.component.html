@@ -1,0 +1,11 @@
+<div class="overlay" *ngIf="isPopupOpen$ | async" (click)="closePopup()"></div>
+<div>
+  <div class="popup" *ngIf="isPopupOpen$ | async">
+    <div class="dialog-content">
+      <img [src]="data.image_path" class="uimage" alt="user-image">
+      <p>{{ data.name }}</p>
+      <p>{{ data.email }}</p>
+      <p>{{ data.location }}</p>
+    </div>
+  </div>
+</div>

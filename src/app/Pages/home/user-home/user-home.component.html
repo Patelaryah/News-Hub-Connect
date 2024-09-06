@@ -1,0 +1,27 @@
+<!-- Main content area -->
+<div class="news-row">
+    <div *ngFor="let card of newsCards">
+      <!--<a [routerLink]="[card.targetUrl]" [queryParams]="{ cardName: card.name }"> -->
+      <a (click)="navigateToDestinationPage(card.name)" style="cursor: pointer;">
+        <div class="card2">
+          <img [src]="card.imageUrl" [alt]="card.alt" class="card-img-2">
+        </div>
+      </a>
+      <span class="card-name-2">{{ card.name }}</span>
+    </div>
+  </div>
+  
+  <div>
+    <h3>Blogs</h3>
+    <div class="card3">
+      <h4 style="margin: 10px 0px 10px 0px;">Featured Stories</h4>
+      <div class="card3-news">
+        <a [routerLink]="[blog.targetUrl]" class="sub-card" *ngFor="let blog of blogs">
+          <img [src]="blog.imageUrl" [alt]="blog.alt" class="sub-card-img">
+          <h5>{{ blog.title }}</h5>
+          <p>{{ blog.description }}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,60 +1,35 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { Route, Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, HttpClientModule],
+  imports: [FormsModule, CommonModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  // Boolean variable to track whether the popup is open or not
+  isPopupOpen: boolean = false;
 
-  loginObj: Login;
-  constructor(private http: HttpClient, private router: Router) {
-    this.loginObj = new Login();
-  }
+  // user type
+  selectedRole: string = ''; // To store the selected role
+  roles = [
+    { id: 'user', name: 'User', iconClass: 'fas fa-user' },
+    { id: 'journalist', name: 'Journalist', iconClass: 'fas fa-pen-nib' },
+    { id: 'admin', name: 'Admin', iconClass: 'fas fa-user-tie' }
+  ];
 
-  onLogin() {
-    const x = this.loginObj.password
-    const y = this.loginObj.username
-    const count = 1;
-    console.log('username: %d', x);
-    console.log('password: %d', y);
-    console.log('password: %d', count);
-    
-    // this.http.post('http://127.0.0.1:8000/login', this.loginObj).subscribe((res:any)=>{
-    //   debugger;
-      
-    //   if(res.result){
-    //     alert("Login sucessfully")
-    //     this.router.navigateByUrl('/dashboard')
-        
-    //   } else {
-    //     alert(res.message)
-    //   }
-    // })
-  }
-}
-
-export class Login{
-  //grant_type: string;
-  username: string;
-  password: string;
-  //scope: string;
-  //client_id: string;
-  //client_secret: string;
-
-  constructor() {
-    
-    this.username = '';
-    this.password = '';
-    //this.grant_type = '';
-    //this.scope = '';
-    //this.client_id = '';
-    //this.client_secret = '';
+  // label type
+  inputFields = [
+      { type: 'email', placeholder: 'Email' },
+      { type: 'password', placeholder: 'Confirm Password' }
+  ];
+  
+  // Function to toggle the popup open and close
+  togglePopup() {
+    this.isPopupOpen = !this.isPopupOpen;
   }
 }
